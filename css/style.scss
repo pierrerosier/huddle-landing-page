@@ -1,0 +1,235 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'poppinsregular';
+    src: url('../fonts/poppins-regular-webfont.eot');
+    src: url('../fonts/poppins-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/poppins-regular-webfont.woff') format('woff'),
+         url('../fonts/poppins-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* VARIABLES */
+
+$violet: hsl(257, 40%, 49%);
+$white: #FFFFFF;
+
+$headings-f: 'poppinsregular';
+$body-f: 'open_sansregular';
+
+$white-f: #FFFFFF;
+$violet-f: hsl(257, 40%, 49%);
+
+$regular: 400;
+$bold: 700;
+
+/* BODY */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.05em;
+    
+}
+
+body {
+    display: block;
+    background-color: $violet;
+    background-image: url('../images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    width: 91%;
+    margin: 0 auto 140px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 1st-block */
+
+.wrap-first-block {
+    width: 60%;
+}
+
+.first-block {
+    margin: 49px auto 0;
+
+    &__tabs {
+        margin: 79px 0 0 0;
+    }
+}
+
+/* 2nd-block */
+
+.wrap-second-block {
+    width: 40%;
+}
+
+.second-block {
+    margin: 246px auto 0;
+
+    &__title {
+        font-family: $headings-f;
+        font-size: 24px;
+        font-weight: $bold;
+        line-height: 60px;
+        color: $white-f;
+    }
+
+    &__txt {
+        width: 82%;
+        margin: 15px 0 0 0;
+        font-family: $body-f;
+        font-size: 16px;
+        font-weight: $regular;
+        line-height: 32px;
+        color: $white-f;
+    }
+
+    &__btn {
+        width: 200px;
+        height: 55px;
+        margin: 27px 0 0 0;
+        border-radius: 25px;
+        border-width: 0;
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.55);
+        background-color: $white;
+        font-family: $body-f;
+        font-size: 16px;
+        font-weight: $regular;
+        color: $violet;
+    }
+
+    &__social {
+        margin: 182px 0 0 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        float: right;
+        clear: both;   
+
+        &-twitter {
+            margin: 0 16px;
+        }
+    }
+}
+
+/* FOOTER */
+
+footer {
+    margin: 0 auto;
+
+    .attribution { 
+        font-size: 11px;
+        text-align: center;
+        
+        >a {
+            color: #FFFFFF;
+        } 
+    }
+}
+
+
+@media screen and(max-width: 768px) {
+
+    /* BODY */
+
+    body {
+        background-image: url('../images/bg-mobile.svg');
+    }
+
+    main {
+        width: 80%;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    /* 1st block */
+
+    .wrap-first-block {
+        width: 100%;
+    }
+
+    .first-block {
+        width: 100%;
+        margin: 23px auto 0;
+    
+        &__tabs {
+            margin: 50px 0 0 0;
+        }
+
+        &__tabs>img {
+            width: 100%;
+        }
+    }
+
+    /* 2nd-block */
+
+    .wrap-second-block {
+        width: 100%;
+    }
+
+    .second-block {
+        margin: 72px auto 0;
+    
+        &__title {
+           text-align: center;
+
+            >.title {
+                font-size: 21px;
+                line-height: 38px;
+            }
+        }
+    
+        &__txt {
+            width: 100%;
+            margin: 15px 0 0 0;
+            text-align: center;
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        >.btn {
+            text-align: center;
+        }
+    
+        &__btn {
+            width: 200px;
+            height: 40px;
+            margin: 27px 0 0 0;
+            font-size: 14px;
+        }
+    
+        &__social {
+            margin: 60px auto 40px;
+            float: none;
+            align-items: center;
+            justify-content: center;
+            
+            
+            >div>img {
+                width: 28px;
+                height: auto;
+            }
+    
+            &-twitter {
+                margin: 0 16px;
+            }
+        }
+    }
+
+}
